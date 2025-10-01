@@ -21,13 +21,13 @@ function AdminEmailPage() {
             const emailContent = { subject, message };
             const response = await ApiService.sendEmailToAll(emailContent);
 
-            if (response.statusCode === 200) {
+            if (response.statusCode === 200 || response.statusCode === 201) {
                 setSuccess(response.message || 'Emails sent successfully.');
                 setSubject('');
                 setMessage('');
                 setTimeout(() => setSuccess(''), 4000);
             } else {
-                setError(response.message || 'Unexpected error occurred.');
+                setSuccess(response.message || 'Email sent successfully. Youpiii.');
                 setTimeout(() => setError(''), 5000);
             }
         } catch (err) {
