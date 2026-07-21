@@ -376,26 +376,26 @@ In beiden Backend-Projekten sind aktuell keine Tests unter `src/test` vorhanden.
 
 ```text
 herne-app/
-â”œâ”€â”€ backend/                  # Hauptbackend mit REST, JPA, JWT, Mail und MQTT-Subscriber
-â”‚   â”œâ”€â”€ src/main/java/...
-â”‚   â”œâ”€â”€ src/main/resources/application.properties
-â”‚   â”œâ”€â”€ Dockerfile
-â”‚   â””â”€â”€ pom.xml
-â”œâ”€â”€ backend_herne/            # Simulator und MQTT-Publisher
-â”‚   â”œâ”€â”€ src/main/java/...
-â”‚   â”œâ”€â”€ src/main/resources/application.properties
-â”‚   â”œâ”€â”€ Dockerfile
-â”‚   â””â”€â”€ pom.xml
-â”œâ”€â”€ frontend_app/             # React-Anwendung
-â”‚   â”œâ”€â”€ public/
-â”‚   â”œâ”€â”€ src/components/
-â”‚   â”œâ”€â”€ src/service/
-â”‚   â”œâ”€â”€ Dockerfile
-â”‚   â””â”€â”€ package.json
-â”œâ”€â”€ mosquitto/mosquitto.conf  # Lokale Broker-Konfiguration
-â”œâ”€â”€ docker-compose.yaml       # Gesamtsystem fÃ¼r die Entwicklung
-â”œâ”€â”€ LICENSE
-â””â”€â”€ README.md
+├── backend/                  # Hauptbackend mit REST, JPA, JWT, Mail und MQTT-Subscriber
+│   ├── src/main/java/...
+│   ├── src/main/resources/application.properties
+│   ├── Dockerfile
+│   └── pom.xml
+├── backend_herne/            # Simulator und MQTT-Publisher
+│   ├── src/main/java/...
+│   ├── src/main/resources/application.properties
+│   ├── Dockerfile
+│   └── pom.xml
+├── frontend_app/             # React-Anwendung
+│   ├── public/
+│   ├── src/components/
+│   ├── src/service/
+│   ├── Dockerfile
+│   └── package.json
+├── mosquitto/mosquitto.conf  # Lokale Broker-Konfiguration
+├── docker-compose.yaml       # Gesamtsystem für die Entwicklung
+├── LICENSE
+└── README.md
 ```
 
 ## Fehlerbehebung
