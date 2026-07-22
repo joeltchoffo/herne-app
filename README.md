@@ -375,7 +375,7 @@ npm test -- --watchAll=false
 npm run build
 ```
 
-Der Testlauf schlägt mit der aktuellen Kombination aus Create React App 5 und React Router 7 bereits bei der Modulauflösung von `react-router-dom` fehl. Der einzige Test in `src/App.test.js` ist außerdem noch der Create-React-App-Beispieltest und erwartet den nicht mehr vorhandenen Text „learn react“. Er prüft keine reale Funktion der App. `npm run build` erzeugt dagegen einen Produktionsbuild, aktuell mit einer ESLint-Warnung wegen einer ungenutzten Variable in `ManageBookingsPage.jsx`.
+Der automatisierte Browser-Test schlägt mit der aktuellen Kombination aus Create React App 5 und React Router 7 bereits bei der Modulauflösung von `react-router-dom` fehl. Der einzige Test in `src/App.test.js` ist außerdem noch der Create-React-App-Beispieltest und erwartet den nicht mehr vorhandenen Text „learn react“. Er prüft keine reale Funktion der App. Der Produktionsbuild wird dagegen mit Node.js 24 erfolgreich durch GitHub Actions verifiziert.
 
 ### Hauptbackend
 
@@ -391,7 +391,7 @@ cd backend_herne
 mvn clean verify
 ```
 
-In beiden Backend-Projekten sind aktuell keine Tests unter `src/test` vorhanden. Die GitHub-Actions-Dateien enthalten außerdem keine wirksame Projektmatrix; der aktuelle CI-Stand baut die Anwendung daher nicht zuverlässig. Ein grüner lokaler Build ersetzt noch keine Integrations- oder Sicherheitstests.
+In beiden Backend-Projekten sind aktuell keine Tests unter `src/test` vorhanden. GitHub Actions verifiziert beide Maven-Projekte mit ihren jeweiligen Java-Versionen und prüft zusätzlich Frontend-Build und Docker-Compose-Konfiguration. Grüne Builds ersetzen jedoch noch keine aussagekräftigen Integrations- oder Sicherheitstests.
 
 ## Projektstruktur
 
