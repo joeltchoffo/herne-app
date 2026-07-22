@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService';
 import AdminLayout from '../admin/AdminLayout';
 import { format } from 'date-fns';
@@ -8,7 +7,6 @@ function ManageBookingsPage() {
     const [bookings, setBookings] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetchBookings();
